@@ -5,7 +5,7 @@
 
 // // // TODO: Uncomment the following two lines.
 //\import dotenv from "dotenv";
-
+const dotenv = require('dotenv')
 const { Pool } = require('pg');
 const { application, json, query } = require('express')
 const express = require('express')
@@ -14,7 +14,7 @@ const app = express()
 const client = require('./db')
 const morgan = require('morgan')
 
-//dotenv.config();
+dotenv.config();
 const PORT = process.env.PORT || 4000
 
 
@@ -69,7 +69,7 @@ app.route('/task/:id')
             res.status(500).json({ error: err})
         }
     })
-//taskName, description, completed
+
     .put(async (req, res) => { // .patch where we are inserting into the json file //UPDATE owners SET age = 30 WHERE name = 'Jane';
         try {
             const { taskName, description, completed } = req.body
