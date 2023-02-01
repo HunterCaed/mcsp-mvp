@@ -9,6 +9,7 @@
     --light: #f4f4f4;
     --highlight: #4CB5AE;
     font-family: 'Oswald', sans-serif;
+    
 }
 .highlight {
   color: var(--highlight);
@@ -51,7 +52,13 @@
   flex-direction: column;
   justify-content: left;
   align-items: left;
+}
 
+#container {
+
+  width: 2000px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 #mainLogo {
@@ -63,25 +70,45 @@
   color: var(--light);
 }
 .form-row {
+  width: 1000px;
+  /* display: flex;
+  justify-content: center;    /* Change this */
+  /* flex-wrap: wrap; */ 
   margin-bottom: 40px;
   display: flex;
-  justify-content: flex-start;
+  flex: 1;
+  justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+  margin: 5rem;
+  border: #4CB5AE 5rem;
+}
+
+.results {
+  display: flex; 
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: top;
+  border: 2 px;
+  background-color: #ffffff;
 }
 
 .form-row input[type='text'] {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #D6D9DC;
   border-radius: 3px;
-  width: 50%;
+  width: 25%;
   padding: 7px;
   font-size: 14px;
 }
 
 .form-row label {
+  margin-top: 5px;
   margin-bottom: 15px;
   color: var(--light);
+  
 }
 .form-row textarea {
   font-family: "Helvetica", "Arial", sans-serif;
@@ -89,7 +116,7 @@
 
   border: 1px solid #D6D9DC;
   border-radius: 3px;
-  width: 50%;
+  width: 25%;
   min-height: 200px;
   margin-bottom: 10px;
   padding: 7px;
@@ -125,3 +152,38 @@
 .form-row button:active {
   background-color: #407FC7;
 }
+
+#btnGet {
+  font-size: 16px;
+  font-weight: bold;
+
+  color: var(--light);
+  background-color: #5995DA;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 10px 40px;
+  cursor: pointer;
+  padding: 1rem;
+  width: 10%;
+}
+
+#btnGet:hover {
+  background-color: #093a73;
+}
+
+#btnGet:active {
+  background-color: #407FC7;
+}
+
+
+  /*
+  When creating your CSS selector,
+  change "brown" to something of your choosing
+  */
+  .waves-effect.waves-brown .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+     background-color: rgba(121, 85, 72, 0.65);
+   }

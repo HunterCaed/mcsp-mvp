@@ -18,7 +18,7 @@ dotenv.config();
 const PORT = process.env.PORT || 4000
 
 
-const URL = process.env.DATABASE_URL 
+//const URL = process.env.DATABASE_URL 
 
 // TODO: Replace with process.env.DATABASE_URL
 // Format: postgres://USER:PASSWORD@HOST:PORT/DATABASE
