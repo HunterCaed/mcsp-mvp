@@ -46,9 +46,10 @@ app.route('/task')
 
     .post(async (req, res) => {  //INSERT INTO task (name, age) VALUES ('John', 33); DB Insert
         try {               
-                const { taskName, description, completed } = req.body;
-                const insert = await client.query('INSERT INTO task (taskName, description, completed) VALUES ($1, $2, $3);', [taskName, description, completed])
-                res.json({ success: true, message: `Task Added`}).status(201)
+                const { task } = req.body;
+                const insert = await client.query('INSERT INTO task (task) VALUES ($1);', [task])
+                const data = await client.query('SELECT * fROM task')
+                res.json({ validation: true, data: data.rows}).status(201)
                     
         } catch (err){
             res.status(500).json({ error: err })
@@ -72,16 +73,27 @@ app.route('/task/:id')
 
     .put(async (req, res) => { // .patch where we are inserting into the json file //UPDATE owners SET age = 30 WHERE name = 'Jane';
         try {
-            const { taskName, description, completed } = req.body
+            const { task } = req.body
             const { id } = req.params    
-            await client.query('UPDATE task SET taskName = $1, description = $2, completed = $3 WHERE id = $4', [taskName, description, completed, id])
+            await client.query('UPDATE task SET task = $1 WHERE id = $2', [task, id])
                 
             res.json({ message: `Updated id: ${id} Task name: ${taskName}`}).status(204)
         } catch (err) {
             //res.status(500).type('text/plain').send('Internal Server Error .patch')
             res.status(500).json({err})
         }
-    })         
+    })
+    
+    .patch(async(req,res)=>{
+        try {
+          let {id} = req.params
+          let {body} = req
+          const data = await client.query(`UPDATE task SET task ='${body.task}' WHERE id = ${id}`)
+          res.status(204).send()
+        } catch (error) {
+          res.status(500).json({message: error.message})
+        }
+      })
     
     .delete(async (req, res) => {
         try {

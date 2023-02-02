@@ -10,7 +10,8 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../p5.min.js"></script>
+    
+    <script src="app.js" defer></script> 
 </head>
 <body>
     <div id='navbar'>
@@ -23,8 +24,13 @@
     </div>
     <div id="mainImage">
             <hi id="mainLogo">Enter <span class="highlight">Tasks</span></hi>
-            
-            <div id="container">
+
+            <div id="todo-add-container">
+                <input type="text" placeholder="Enter to-do item here..." id="todo-input">
+                <button type="button" id="add-btn">Add Task</button>
+            </div>
+            <div id="todo-items-container"></div>
+            <!-- <div id="container">
                 <div class='form-row'>
                     <label for='full-name'>Task Name</label>
                     <input id='full-name' name='full-name' type='text'/>
@@ -36,18 +42,17 @@
                 
                      <button id='btn'>Submit</button>  
                 </div>
-            
+                
                 <div class='form-row' id="results">
-                    <h1>Task Results</h1>
-                    <button id='btnGet'>Retrieve</button>
+                     
                 </div>
-            </div>
+            </div> -->
     </div>
             
                    
     </div>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="app.js"></script>    
+       
 </body>
 </html>
 

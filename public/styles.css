@@ -70,7 +70,7 @@
   color: var(--light);
 }
 .form-row {
-  width: 1000px;
+  width: 800px;
   /* display: flex;
   justify-content: center;    /* Change this */
   /* flex-wrap: wrap; */ 
@@ -80,11 +80,11 @@
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 5rem;
+  margin: 4rem;
   border: #4CB5AE 5rem;
 }
 
-.results {
+.to-do-tasks {
   display: flex; 
   flex: 1;
   flex-direction: column;
@@ -178,12 +178,87 @@
 }
 
 
-  /*
-  When creating your CSS selector,
-  change "brown" to something of your choosing
-  */
-  .waves-effect.waves-brown .waves-ripple {
-    /* The alpha value allows the text and background color
-    of the button to still show through. */
-     background-color: rgba(121, 85, 72, 0.65);
-   }
+
+
+#todo-items-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 50px;
+  width: 700px;
+}
+#todo-add-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  width: 700px;
+}
+
+#todo-add-container input {
+  width: 300px;
+  height: 40px;
+  padding-left: 15px;
+  border: 3px inset;
+  outline: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.todo-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 400px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: darkgray;
+  margin-bottom: 30px;
+  margin-right: 40px;
+  border: 3px inset;
+  
+  
+}
+
+.task-name {
+  width: 1000px;
+  text-align: left;
+
+}
+
+#add-btn {
+  background-color: rgb(17, 140, 136);
+  margin-bottom: 3px;
+  color: white;
+  width: 100px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 2px black;
+}
+
+#add-btn:hover {
+  cursor: pointer;
+  color: green;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: white;
+}
+
+#add-btn:active {
+  transform: translateY(1px);
+}
+
+.delete-btn {
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: rgb(69, 142, 198);
+  border-radius:  10px 0;
+  box-shadow: 2px 2px 2px black;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  color: rgb(197, 7, 35);
+  font-size: 14px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.468);
+}
