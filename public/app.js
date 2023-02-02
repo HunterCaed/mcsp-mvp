@@ -86,12 +86,24 @@ const createTaskList = async (data) => {
 
 
 const API_URL = '';
-const btn = document.getElementById('btn');
-const getBtn = document.getElementById('btnGet');
-const results = document.getElementById('results');
-const resultscont = document.getElementById('rresults-cont')
+// const btn = document.getElementById('btn');
+// const getBtn = document.getElementById('btnGet');
+// const results = document.getElementById('results');
+// const resultscont = document.getElementById('rresults-cont')
 const taskUrl = '';
 const addBtn = document.getElementById('add-btn')
+
+
+const currentDate  = new Date()
+    currentDay   = currentDate.getDate() < 10 
+                 ? '0' + currentDate.getDate() 
+                 : currentDate.getDate(),
+    currentMonth = currentDate.getMonth() < 9 
+                 ? '0' + (currentDate.getMonth() + 1) 
+                 : (currentDate.getMonth() + 1);
+
+document.getElementById("date").innerHTML = currentDay + '/' + currentMonth + '/' +  currentDate.getFullYear();
+
 
 getTask() 
 
